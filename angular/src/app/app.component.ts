@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-class Item{
-  id:number;
-  name:string;
-}
 
 @Component({
   selector: 'app-root',
@@ -13,33 +9,7 @@ class Item{
 
 
 export class AppComponent {
-  title = 'angular';
+  title = 'MapTodo';
 
-  hide = true;
-
-  color: 'red' | 'green' = 'red';
-
-  public items: Item[]= [
-    {id:1, name: 'Lublin'},
-    {id:2, name: 'Warszawa'},
-    {id:3, name: 'Gdańsk'},
-    {id:4, name: 'Rzeszów'},
-    {id:5, name: 'Suwałki'},
-  ];
-
-  toggleHide() {
-    this.hide = !this.hide;
-  }
-
-  toggleColor() {
-    if (this.color === 'red') {
-      this.color = 'green';
-    } else {
-      this.color = 'red';
-    }
-  }
-  onItemClick(item){
-    console.log('ITEM CLICKED', item);
-  }
 }
 
