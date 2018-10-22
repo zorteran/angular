@@ -3,10 +3,17 @@
   <h1 *ngIf="hide" [style.color]="color">
     Welcome to {{ title }}!
   </h1>
-    {{ hide | json}}
-    <button (click)="toggleHide($event1)">Hide</button>
-    <button (click)="toggleColor($event1)">Color</button>
+  {{ hide | json}}
+  <button (click)="toggleHide()">Hide</button>
+  <button (click)="toggleColor()">Color</button>
 </div>
 
+<ul>
+  <li *ngFor="let item of items" (click)="onItemClick(item)">
+    {{ item.name }}
+  </li>
+</ul>
+
+<app-list></app-list>
 
 <router-outlet></router-outlet>
