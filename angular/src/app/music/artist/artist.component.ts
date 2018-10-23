@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap, delay } from 'rxjs/operators';
+import { MusicService } from '../music.service';
 
 @Component({
   selector: 'app-artist',
@@ -7,12 +9,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./artist.component.scss']
 })
 export class ArtistComponent implements OnInit {
+  artist$;
 
-  id$;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private musicService: MusicService) { }
 
   ngOnInit() {
-    this.id$ = this.route.paramMap;
+    this.artist$ = this.route.paramMap.pipe(
+      switchMap((data) => {
+        return this.musicService.getArtist(data.get('id')).pipe(delay(1000));
+      })
+    );
   }
+
+
 
 }

@@ -1,3 +1,4 @@
-<p>
-  artist works for {{ id$ | async| json }}
+<p *ngIf="artist$ | async as artist; else loadingTemplate">
+    <app-artist-profile [artist]="artist"></app-artist-profile>
 </p>
+<ng-template #loadingTemplate>Waiting...</ng-template>
