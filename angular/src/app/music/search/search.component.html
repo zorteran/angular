@@ -1,8 +1,6 @@
-<div (click)="show = true">
-  <p>
-    search works!
-  </p>
-  <pre *ngIf="show">
-    {{ artists$ | async | json }}
-  </pre>
+<div *ngIf="artists$ | async as artists; else loading">
+  <div *ngFor="let artist of artists">
+    Hello {{artist.name}}, {{artist.url}}!
+  </div>
 </div>
+<ng-template #loading>Waiting...</ng-template>
