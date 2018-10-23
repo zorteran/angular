@@ -16,7 +16,7 @@ export class ArtistComponent implements OnInit {
   ngOnInit() {
     this.artist$ = this.route.paramMap.pipe(
       switchMap((data) => {
-        return this.musicService.getArtist(data.get('id')).pipe(delay(1000));
+        return this.musicService.getArtist(data.get('id'));
       })
     );
   }

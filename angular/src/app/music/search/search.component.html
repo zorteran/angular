@@ -1,8 +1,30 @@
-<div *ngIf="artists$ | async as artists; else loading" class="card-group">
-  <div *ngFor="let artist of artists">
-    <app-artist-profile [artist]="artist">
-      <button class="btn btn-primary" routerLink="../artist/{{artist.id}}">Show songs</button>
-    </app-artist-profile>
+<div class="container">
+  <form>
+    <div class="form-group">
+      
+      <input name="form-control" type="text" [ngModel]="query" (ngModelChange)="onQuery($event)"/>
+    </div>
+  </form>
+
+
+  <div class="row">
+    <div class="col">
+
+      <div *ngIf="artists$ | async as artists; else loading" class="card-group">
+        <div *ngFor="let artist of artists">
+          <app-artist-profile [artist]="artist">
+            <button class="btn btn-primary" routerLink="artist/{{artist.id}}">Show songs</button>
+            <button class="btn btn-primary" routerLink="../artist/{{artist.id}}">Show songs on another page</button>
+          </app-artist-profile>
+        </div>
+      </div>
+      <ng-template #loading>Waiting...</ng-template>
+
+    </div>
+    <div class="col">
+
+      <router-outlet></router-outlet>
+
+    </div>
   </div>
 </div>
-<ng-template #loading>Waiting...</ng-template>

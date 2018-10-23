@@ -22,4 +22,7 @@ export class MusicService {
   getArtist(id: string): Observable<Artist> {
     return this.http.get<Artist>(this.baseUrl + '/artists/' + id + '?_embed=songs');
   }
+  searchArtist(query: string): Observable<Artist[]> {
+    return this.http.get<Artist[]>(this.baseUrl + '/artists/?q=' + query);
+  }
 }

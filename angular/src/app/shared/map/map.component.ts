@@ -46,10 +46,11 @@ export class MapComponent implements OnInit, OnChanges {
     }).addTo(this.map);
 
     this.artist$.subscribe((artist: Artist) => {
-      L.marker([lat, lng]).addTo(this.map)
+      L.marker(artist.location).addTo(this.map)
         .bindPopup(artist.name)
         .openPopup();
-    })
+    });
+
     if (this.artist != null) {
 
     }

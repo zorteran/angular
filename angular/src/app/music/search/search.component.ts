@@ -11,7 +11,7 @@ import { delay } from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
 
-
+  public query: string;
   public artists$: Observable<Artist[]>;  // $ na końcu - jeśli cos jest streamem
 
   constructor(private musicService: MusicService) { }
@@ -21,5 +21,10 @@ export class SearchComponent implements OnInit {
       delay(250)
     );
   }
+
+  onQuery(e) {
+    this.artists$ = this.musicService.searchArtist(e);
+  }
+
 
 }
