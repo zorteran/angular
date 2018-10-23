@@ -1,6 +1,6 @@
 <p *ngIf="artist$ | async as artist; else loadingTemplate">
     <app-artist-profile [artist]="artist">
-        <button class="btn btn-warning" routerLink="../../artist-edit/{{artist.id}}">Edit</button>
+        <button class="btn btn-warning" routerLink="/music/search/artist-edit/{{artist.id}}">Edit</button>
     </app-artist-profile>
     
     <app-map [artist]="artist"></app-map>
