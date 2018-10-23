@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MusicService } from '../music.service';
 import { switchMap, tap } from 'rxjs/operators';
 
@@ -12,7 +12,8 @@ import { switchMap, tap } from 'rxjs/operators';
 export class ArtistEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private musicService: MusicService
+    private musicService: MusicService,
+    private router: Router
   ) { }
   artist$;
   artistForm: FormGroup;
@@ -40,6 +41,7 @@ export class ArtistEditComponent implements OnInit {
     const data = this.artistForm.getRawValue();
     this.musicService.updateArtist(data.id, data).subscribe(res => {
       console.log('RES', res);
+      this.router.navigate(['music', 'search', 'artist', data.id]);
     });
   }
 }
