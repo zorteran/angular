@@ -1,3 +1,8 @@
-<p>
-  search works!
-</p>
+<div (click)="show = true">
+  <p>
+    search works!
+  </p>
+  <pre *ngIf="show">
+    {{ artists$ | async | json }}
+  </pre>
+</div>

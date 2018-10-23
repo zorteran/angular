@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MusicService } from '../music.service';
+import { Observable } from 'rxjs';
+import { Artist } from '../models/artist.model';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+
+  public artists$: Observable<Artist[]>;  // $ na końcu - jeśli cos jest streamem 
+
+  public show = false;
+
+  constructor(private musicService: MusicService) { }
 
   ngOnInit() {
+    this.artists$ = this.musicService.getArtists();
   }
 
 }
