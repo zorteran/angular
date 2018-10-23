@@ -25,4 +25,7 @@ export class MusicService {
   searchArtist(query: string): Observable<Artist[]> {
     return this.http.get<Artist[]>(this.baseUrl + '/artists/?q=' + query);
   }
+  updateArtist(id: string, data: Partial<Artist>): Observable<any> {
+    return this.http.patch<any>(this.baseUrl + '/artists/' + id, data);
+  }
 }

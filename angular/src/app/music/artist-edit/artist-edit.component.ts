@@ -29,6 +29,7 @@ export class ArtistEditComponent implements OnInit {
     );
 
     this.artistForm = new FormGroup({
+      id: new FormControl(''),
       name: new FormControl(''),
       img: new FormControl(''),
     });
@@ -36,5 +37,9 @@ export class ArtistEditComponent implements OnInit {
 
   public save() {
     console.log('DATA', this.artistForm.getRawValue());
+    const data = this.artistForm.getRawValue();
+    this.musicService.updateArtist(data.id, data).subscribe(res => {
+      console.log('RES', res);
+    });
   }
 }
