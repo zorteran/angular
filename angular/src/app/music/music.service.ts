@@ -20,6 +20,6 @@ export class MusicService {
     return this.http.get<Artist[]>(this.baseUrl + '/artists').pipe(shareReplay());
   }
   getArtist(id: string): Observable<Artist> {
-    return this.http.get<Artist>(this.baseUrl + '/artists/' + id);
+    return this.http.get<Artist>(this.baseUrl + '/artists/' + id + '?_embed=songs');
   }
 }

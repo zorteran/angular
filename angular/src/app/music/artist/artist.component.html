@@ -1,4 +1,6 @@
 <p *ngIf="artist$ | async as artist; else loadingTemplate">
     <app-artist-profile [artist]="artist"></app-artist-profile>
+
+    <app-map [artist]="artist"></app-map>
 </p>
 <ng-template #loadingTemplate>Waiting...</ng-template>
