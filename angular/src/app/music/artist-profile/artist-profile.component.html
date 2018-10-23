@@ -1,3 +1,8 @@
-<p>
-  artist-profile works!
-</p>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{baseUrl + '/'+ artist.img}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{artist.name}}</h5>
+    <p class="card-text">Location: {{artist.location|json}}</p>
+    <a href="#" class="btn btn-primary">Details</a>
+  </div>
+</div>

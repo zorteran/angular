@@ -1,6 +1,7 @@
 <div *ngIf="artists$ | async as artists; else loading">
   <div *ngFor="let artist of artists">
-    Hello {{artist.name}}, {{artist.url}}!
+    <app-artist-profile [artist]="artist"></app-artist-profile>
+    Hello {{artist.name}}, {{artist.img}}!
   </div>
 </div>
 <ng-template #loading>Waiting...</ng-template>

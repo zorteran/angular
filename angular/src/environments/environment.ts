@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  imagesBaseUrl: 'http://www.songnotes.cc/images/artists/',
   baseUrl: 'http://localhost:3000'
 };
 

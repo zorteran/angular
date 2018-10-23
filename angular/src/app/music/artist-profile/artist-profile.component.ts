@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Artist } from '../models/artist.model';
+import { BASE_URL } from 'src/app/app-config';
 
 @Component({
   selector: 'app-artist-profile',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistProfileComponent implements OnInit {
 
-  constructor() { }
+  @Input() artist: Artist;
+
+  constructor(@Inject(BASE_URL) private baseUrl: string) { }
 
   ngOnInit() {
   }
