@@ -7,7 +7,7 @@ import { ArtistProfileComponent } from './artist-profile/artist-profile.componen
 import { ImageBaseUrlPipe } from './pipes/image-base-url.pipe';
 import { ArtistComponent } from './artist/artist.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtistEditComponent } from './artist-edit/artist-edit.component';
 
 @NgModule({
@@ -15,7 +15,8 @@ import { ArtistEditComponent } from './artist-edit/artist-edit.component';
     CommonModule,
     MusicRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent]
 })
