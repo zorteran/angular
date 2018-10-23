@@ -1,7 +1,8 @@
-<div *ngIf="artists$ | async as artists; else loading">
+<div *ngIf="artists$ | async as artists; else loading" class="card-group">
   <div *ngFor="let artist of artists">
-    <app-artist-profile [artist]="artist"></app-artist-profile>
-    Hello {{artist.name}}, {{artist.img}}!
+    <app-artist-profile [artist]="artist">
+      <button class="btn btn-primary" routerLink="../artist/{{artist.id}}">Show songs</button>
+    </app-artist-profile>
   </div>
 </div>
 <ng-template #loading>Waiting...</ng-template>

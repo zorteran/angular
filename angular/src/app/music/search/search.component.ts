@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.artists$ = this.musicService.getArtists().pipe(
-      delay(2000)
+      delay(250)
     );
   }
 

@@ -1,8 +1,8 @@
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{baseUrl + '/'+ artist.img}}" alt="Card image cap">
+  <img class="card-img-top" src="{{ artist.img | imageBaseUrl }}" onerror="this.src='http://placekitten.com/300/300'" alt="{{artist.name}}">
   <div class="card-body">
     <h5 class="card-title">{{artist.name}}</h5>
     <p class="card-text">Location: {{artist.location|json}}</p>
-    <a href="#" class="btn btn-primary">Details</a>
+    <ng-content></ng-content>
   </div>
 </div>
