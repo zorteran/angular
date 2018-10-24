@@ -57,4 +57,18 @@ export class MusicService {
       })
     );
   }
+  updatePlaylist(id: number, data: Partial<Playlist>): Observable<Playlist> {
+    return this.http.patch<Playlist>(this.baseUrl + '/playlists/' + id, data).pipe(
+      tap(playlist => {
+        this.reload$.next(1);
+      })
+    );
+  }
+  deletePlaylist(id: number): Observable<any> {
+    return this.http.delete<any>(this.baseUrl + '/playlists/' + id).pipe(
+      tap(playlist => {
+        this.reload$.next(1);
+      })
+    );
+  }
 }

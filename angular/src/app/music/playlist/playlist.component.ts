@@ -32,6 +32,7 @@ export class PlaylistComponent implements OnInit {
     this.musicService.createPlaylist(this.newPlaylist).subscribe(res => {
       console.log('RES', res);
     });
+    this.name.setValue('');
     this.newPlaylist = null;
   }
 

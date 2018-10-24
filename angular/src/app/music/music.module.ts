@@ -13,6 +13,7 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
 import { SongComponent } from './song/song.component';
 import { AddSongComponent } from './add-song/add-song.component';
+import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,6 @@ import { AddSongComponent } from './add-song/add-song.component';
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
     ArtistComponent, ArtistEditComponent, PlaylistComponent,
-    PlaylistProfileComponent, SongComponent, AddSongComponent]
+    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent]
 })
 export class MusicModule { }

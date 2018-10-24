@@ -11,11 +11,7 @@
           <button type="btn" class="btn" (click)="savePlaylist()">Save</button>
     </form>
     <div *ngIf="playlists$ | async as playlists">
-
-      <ul class="list-group">
-        <li *ngFor="let playlist of playlists" class="list-group-item list-group-item-link" routerLink="./playlist-profile/{{playlist.id}}"
-          routerLinkActive="active">{{playlist.name}}</li>
-      </ul>
+          <app-playlist-item *ngFor="let playlist of playlists" [playlist]="playlist"></app-playlist-item>
     </div>
   </div>
   <div class="col">
