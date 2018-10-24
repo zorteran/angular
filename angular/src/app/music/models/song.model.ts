@@ -4,4 +4,5 @@ export interface Song {
     year: string;
     artistId: number;
     webUrl: string;
+    generes: string[];
 }

@@ -1,8 +1,8 @@
 import { Injectable, InjectionToken, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 import { Artist } from './models/artist.model';
-import { share, shareReplay, delay } from 'rxjs/operators';
+import { share, shareReplay, delay, tap, startWith, switchMap, merge } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { BASE_URL } from '../app-config';
 import { Playlist } from './models/playlist.model';
@@ -14,6 +14,7 @@ import { Song } from './models/song.model';
 })
 export class MusicService {
 
+  reload$ = new Subject();
 
   constructor(private http: HttpClient, @Inject(BASE_URL) public baseUrl: string) {
 
@@ -32,7 +33,13 @@ export class MusicService {
     return this.http.patch<any>(this.baseUrl + '/artists/' + id, data);
   }
   getPlaylists(): Observable<Playlist[]> {
-    return this.http.get<Playlist[]>(this.baseUrl + '/playlists').pipe(shareReplay());
+    return Observable.create().pipe(
+      startWith(1),
+      merge(this.reload$),
+      switchMap(() => {
+        return this.http.get<Playlist[]>(this.baseUrl + '/playlists');
+      })
+    );
   }
   getPlaylist(id: string): Observable<Playlist> {
     return this.http.get<Playlist>(this.baseUrl + '/playlists/' + id).pipe(shareReplay());
@@ -42,5 +49,12 @@ export class MusicService {
   }
   getSongs(): Observable<Song[]> {
     return this.http.get<Song[]>(this.baseUrl + '/songs').pipe(shareReplay());
+  }
+  createPlaylist(data: Partial<Playlist>): Observable<Playlist> {
+    return this.http.post<Playlist>(this.baseUrl + '/playlists', data).pipe(
+      tap(playlist => {
+        this.reload$.next(1);
+      })
+    );
   }
 }

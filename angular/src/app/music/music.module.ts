@@ -22,6 +22,8 @@ import { AddSongComponent } from './add-song/add-song.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent, PlaylistComponent, PlaylistProfileComponent, SongComponent, AddSongComponent]
+  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
+    ArtistComponent, ArtistEditComponent, PlaylistComponent,
+    PlaylistProfileComponent, SongComponent, AddSongComponent]
 })
 export class MusicModule { }

@@ -1,5 +1,5 @@
 <div *ngIf="playlists$ | async as playlists">
-  <button class="btn btn-primary" routerLink="/music/playlist/add-song/{{playlists[0].playlistId}}">Add song</button>
+  <button class="btn btn-primary" routerLink="/music/playlist/add-song/{{playlistId$|async}}">Add song</button>
   <div *ngFor="let playlist of playlists">
     <app-song [song]="playlist.song"></app-song>
   </div>

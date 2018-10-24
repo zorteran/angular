@@ -1,10 +1,20 @@
 <div class="row">
   <div class="col">
     <h1>Playlists:</h1>
+    <button class="btn btn-primary" (click)="createPlaylist()" *ngIf="!newPlaylist">Add</button>
+    <form *ngIf="newPlaylist">
+        <div class="form-group">
+            <label>Name:
+                <input type="text" class="form-control" [formControl]="name">
+            </label>
+          </div>
+          <button type="btn" class="btn" (click)="savePlaylist()">Save</button>
+    </form>
     <div *ngIf="playlists$ | async as playlists">
 
-      <ul class="list-group" *ngFor="let playlist of playlists">
-        <li class="list-group-item" routerLink="./playlist-profile/{{playlist.id}}" routerLinkActive="active">{{playlist.name}}</li>
+      <ul class="list-group">
+        <li *ngFor="let playlist of playlists" class="list-group-item list-group-item-link" routerLink="./playlist-profile/{{playlist.id}}"
+          routerLinkActive="active">{{playlist.name}}</li>
       </ul>
     </div>
   </div>
