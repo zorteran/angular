@@ -5,4 +5,5 @@ export interface Song {
     artistId: number;
     webUrl: string;
     generes: string[];
+    favorite?: boolean;
 }

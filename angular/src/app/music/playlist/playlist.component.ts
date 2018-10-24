@@ -28,11 +28,13 @@ export class PlaylistComponent implements OnInit {
   }
 
   public savePlaylist() {
-    this.newPlaylist.name = this.name.value;
-    this.musicService.createPlaylist(this.newPlaylist).subscribe(res => {
-      console.log('RES', res);
-    });
-    this.name.setValue('');
+    if (!(this.name.value === '')) {
+      this.newPlaylist.name = this.name.value;
+      this.musicService.createPlaylist(this.newPlaylist).subscribe(res => {
+        console.log('RES', res);
+      });
+      this.name.setValue('');
+    }
     this.newPlaylist = null;
   }
 

@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="songForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" class="form-control" formControlName="title">
+    <small id="titlHelp" class="form-text text-muted">The cool song name</small>
+  </div>
+  <div class="form-group">
+    <label for="year">Year</label>
+    <input type="password" class="form-control" id="year" formControlName="year">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="favorite" formControlName="favorite">
+    <label class="form-check-label" for="favorite">Favorite</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -14,6 +14,7 @@ import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.co
 import { SongComponent } from './song/song.component';
 import { AddSongComponent } from './add-song/add-song.component';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
+import { SongEditFormComponent } from './song-edit-form/song-edit-form.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,6 @@ import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
     ArtistComponent, ArtistEditComponent, PlaylistComponent,
-    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent]
+    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent, SongEditFormComponent]
 })
 export class MusicModule { }

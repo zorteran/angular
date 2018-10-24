@@ -2,16 +2,21 @@
   <div class="col">
     <h1>Playlists:</h1>
     <button class="btn btn-primary" (click)="createPlaylist()" *ngIf="!newPlaylist">Add</button>
-    <form *ngIf="newPlaylist">
-        <div class="form-group">
+    <div class="card" *ngIf="newPlaylist">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
             <label>Name:
-                <input type="text" class="form-control" [formControl]="name">
+              <input type="text" class="form-control" [formControl]="name">
             </label>
           </div>
           <button type="btn" class="btn" (click)="savePlaylist()">Save</button>
-    </form>
+        </form>
+      </div>
+    </div>
+
     <div *ngIf="playlists$ | async as playlists">
-          <app-playlist-item *ngFor="let playlist of playlists" [playlist]="playlist"></app-playlist-item>
+      <app-playlist-item *ngFor="let playlist of playlists" [playlist]="playlist"></app-playlist-item>
     </div>
   </div>
   <div class="col">
