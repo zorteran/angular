@@ -1,0 +1,8 @@
+<div *ngIf="playlist$ | async as playlist">
+  <h4>Choose a song to add to playlist {{playlist.name}}</h4>
+  <div *ngIf="songs$ | async as songs">
+    <div *ngFor="let song of songs">
+      <app-song [song]="song" (click)="addSong(song)"></app-song>
+    </div>
+  </div>
+</div>

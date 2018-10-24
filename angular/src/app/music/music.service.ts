@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { BASE_URL } from '../app-config';
 import { Playlist } from './models/playlist.model';
 import { PlaylistSong } from './models/playlistSong.model';
+import { Song } from './models/song.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,13 @@ export class MusicService {
   getPlaylists(): Observable<Playlist[]> {
     return this.http.get<Playlist[]>(this.baseUrl + '/playlists').pipe(shareReplay());
   }
-  getPlaylistWithSongs(playlistId: string) {
+  getPlaylist(id: string): Observable<Playlist> {
+    return this.http.get<Playlist>(this.baseUrl + '/playlists/' + id).pipe(shareReplay());
+  }
+  getPlaylistWithSongs(playlistId: string): Observable<PlaylistSong[]> {
     return this.http.get<PlaylistSong[]>(this.baseUrl + '/playlistSongs?_expand=song&playlistId=' + playlistId).pipe(shareReplay());
+  }
+  getSongs(): Observable<Song[]> {
+    return this.http.get<Song[]>(this.baseUrl + '/songs').pipe(shareReplay());
   }
 }

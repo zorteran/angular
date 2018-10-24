@@ -5,6 +5,7 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistEditComponent } from './artist-edit/artist-edit.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
+import { AddSongComponent } from './add-song/add-song.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: 'playlist-profile/:id',
         component: PlaylistProfileComponent
+      },
+      {
+        path: 'add-song/:id',
+        component: AddSongComponent
       }
     ]
   }

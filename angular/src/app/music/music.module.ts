@@ -12,6 +12,7 @@ import { ArtistEditComponent } from './artist-edit/artist-edit.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
 import { SongComponent } from './song/song.component';
+import { AddSongComponent } from './add-song/add-song.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { SongComponent } from './song/song.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent, PlaylistComponent, PlaylistProfileComponent, SongComponent]
+  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent, PlaylistComponent, PlaylistProfileComponent, SongComponent, AddSongComponent]
 })
 export class MusicModule { }
