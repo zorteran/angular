@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-song-edit-form',
@@ -21,16 +21,23 @@ export class SongEditFormComponent implements OnInit {
     title: ['', Validators.required],
     year: ['', Validators.required],
     favorite: [false, Validators.required],
+    genders: this.fb.array([
+      this.fb.control('')
+    ])
   });
+
+  get genders() {
+    return this.songForm.get('genders') as FormArray;
+  }
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    console.log('SUBMIT', this.songForm.value);
-    
+  onSubmit() {
+    console.log('SUBMIT', this.songForm.valid, this.songForm.value);
+
   }
 
 }

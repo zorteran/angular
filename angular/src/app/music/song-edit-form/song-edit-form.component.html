@@ -6,7 +6,13 @@
   </div>
   <div class="form-group">
     <label for="year">Year</label>
-    <input type="password" class="form-control" id="year" formControlName="year">
+    <input type="nubmer" class="form-control" id="year" formControlName="year">
+  </div>
+  <label for="gender">Genders</label>
+  <div *ngFor="let gender of genders.controls; let i=index">
+      <div class="form-group">
+          <input type="text" class="form-control" name="gender-{{i}}" [formControlName]="i">
+        </div>
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="favorite" formControlName="favorite">
