@@ -1,0 +1,5 @@
+<div *ngIf="playlists$ | async as playlists">
+  <div *ngFor="let playlist of playlists">
+    <app-song [song]="playlist.song"></app-song>
+  </div>
+</div>

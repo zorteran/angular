@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistEditComponent } from './artist-edit/artist-edit.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,15 @@ const routes: Routes = [
   }, {
     path: 'artist/:id',
     component: ArtistComponent
+  }, {
+    path: 'playlist',
+    component: PlaylistComponent,
+    children: [
+      {
+        path: 'playlist-profile/:id',
+        component: PlaylistProfileComponent
+      }
+    ]
   }
 ];
 

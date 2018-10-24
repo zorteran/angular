@@ -9,6 +9,9 @@ import { ArtistComponent } from './artist/artist.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtistEditComponent } from './artist-edit/artist-edit.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
+import { SongComponent } from './song/song.component';
 
 @NgModule({
   imports: [
@@ -18,6 +21,6 @@ import { ArtistEditComponent } from './artist-edit/artist-edit.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent]
+  declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe, ArtistComponent, ArtistEditComponent, PlaylistComponent, PlaylistProfileComponent, SongComponent]
 })
 export class MusicModule { }

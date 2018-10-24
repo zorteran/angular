@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col">
+    <h1>Playlists:</h1>
+    <div *ngIf="playlists$ | async as playlists">
+
+      <ul class="list-group" *ngFor="let playlist of playlists">
+        <li class="list-group-item" routerLink="./playlist-profile/{{playlist.id}}" routerLinkActive="active">{{playlist.name}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>
