@@ -7,6 +7,11 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistProfileComponent } from './playlist-profile/playlist-profile.component';
 import { AddSongComponent } from './add-song/add-song.component';
 import { SongEditFormComponent } from './song-edit-form/song-edit-form.component';
+import { SongsComponent } from './songs/songs.component';
+import { SongComponent } from './song/song.component';
+import { SongViewComponent } from './song-view/song-view.component';
+import { SongEditComponent } from './song-edit/song-edit.component';
+import { SongAddComponent } from './song-add/song-add.component';
 
 const routes: Routes = [
   {
@@ -22,10 +27,12 @@ const routes: Routes = [
         component: ArtistEditComponent
       }
     ]
-  }, {
+  },
+  {
     path: 'artist/:id',
     component: ArtistComponent
-  }, {
+  },
+  {
     path: 'playlist',
     component: SongEditFormComponent, // tymczasowo, noramlnie PlaylistComponent
     children: [
@@ -39,6 +46,24 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'songs',
+    component: SongsComponent,
+    children: [
+      {
+        path: 'add-song',
+        component: SongAddComponent
+      },
+      {
+        path: 'edit-song/:id',
+        component: SongEditComponent
+      },
+      {
+        path: ':id',
+        component: SongViewComponent
+      }
+    ]
+  }
 
 ];
 

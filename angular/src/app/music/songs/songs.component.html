@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <button class="btn btn-info" routerLink="./add-song" routerLinkActive="disabled">Add song</button>
+      </div>
+    </div>
+    <div *ngIf="songs$|async as songs">
+      <app-song *ngFor="let song of songs" [song]="song">
+        <button class="btn btn-primary" routerLink="./{{song.id}}" routerLinkActive="disabled">Select song</button>
+        <button class="btn btn-secondary" routerLink="./edit-song/{{song.id}}" routerLinkActive="disabled">Edit song</button>
+      </app-song>
+    </div>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

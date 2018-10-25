@@ -15,6 +15,10 @@ import { SongComponent } from './song/song.component';
 import { AddSongComponent } from './add-song/add-song.component';
 import { PlaylistItemComponent } from './playlist-item/playlist-item.component';
 import { SongEditFormComponent } from './song-edit-form/song-edit-form.component';
+import { SongsComponent } from './songs/songs.component';
+import { SongAddComponent } from './song-add/song-add.component';
+import { SongEditComponent } from './song-edit/song-edit.component';
+import { SongViewComponent } from './song-view/song-view.component';
 
 @NgModule({
   imports: [
@@ -26,6 +30,6 @@ import { SongEditFormComponent } from './song-edit-form/song-edit-form.component
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
     ArtistComponent, ArtistEditComponent, PlaylistComponent,
-    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent, SongEditFormComponent]
+    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent, SongEditFormComponent, SongsComponent, SongAddComponent, SongEditComponent, SongViewComponent]
 })
 export class MusicModule { }
