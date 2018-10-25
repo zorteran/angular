@@ -22,6 +22,12 @@
             <span>{{(userService.user$|async).name}}</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="userService.idleTime$ | async as time">
+            idle time: <b>{{time}}s</b>
+            <span *ngIf="time < 3" (click)="userService.refreshButtonClick$.next()">REFRESH</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

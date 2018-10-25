@@ -8,6 +8,8 @@ import { BASE_URL, IMAGE_BASE_URL } from './app-config';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { SessionInterceptor } from './interceptors/session.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,9 @@ import { UserLoginComponent } from './user-login/user-login.component';
     BrowserAnimationsModule
   ],
   providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: SessionInterceptor, multi: true
+  },
+  {
     provide: BASE_URL,
     useValue: environment.baseUrl
   },

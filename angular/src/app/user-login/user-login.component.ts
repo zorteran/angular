@@ -36,6 +36,7 @@ export class UserLoginComponent implements OnInit {
       const data = this.loginForm.value;
       this.userService.login(data.username, data.password).subscribe(user => {
         console.log('SUCCESS', user);
+        this.dialog.close(null);
       }, (err) => {
         console.log('ERR', err);
       });
