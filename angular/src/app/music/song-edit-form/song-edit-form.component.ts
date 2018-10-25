@@ -30,20 +30,17 @@ export class SongEditFormComponent implements OnInit {
     return this.songForm.get('genders') as FormArray;
   }
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log('SUBMIT', this.songForm.valid, this.songForm.value);
-    this.save.emit(this.songForm.value);
-
+    this.save.emit(this.songForm.getRawValue());
   }
 
   onCancel() {
-    console.log('cancel');
-    this.router.navigateByUrl('/music/songs');
+    this.cancel.emit();
   }
   addGender() {
     this.genders.push(this.fb.control(''));

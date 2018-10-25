@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { SongService } from '../song.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { Song } from '../models/song.model';
 
 @Component({
   selector: 'app-song-edit',
@@ -6,10 +11,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./song-edit.component.scss']
 })
 export class SongEditComponent implements OnInit {
-
-  constructor() { }
+  destroy$ = new Subject();
+  song$;
+  constructor(private router: Router, private songService: SongService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+  }
+
+  onCancel() {
+    this.router.navigateByUrl('/music/songs/');
+  }
+  onSave(event: Partial<Song>) {
+    console.log('$event', event);
+    this.songService.editSong(event.id, event).pipe(
+      takeUntil(this.destroy$)
+    ).subscribe();
   }
 
 }
