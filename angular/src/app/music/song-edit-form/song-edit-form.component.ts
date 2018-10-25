@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, OnChanges } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Song } from '../models/song.model';
 import { EventEmitter } from '@angular/core';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './song-edit-form.component.html',
   styleUrls: ['./song-edit-form.component.scss']
 })
-export class SongEditFormComponent implements OnInit {
+export class SongEditFormComponent implements OnInit, OnChanges {
 
 
   @Output() cancel = new EventEmitter();
@@ -17,6 +17,7 @@ export class SongEditFormComponent implements OnInit {
   @Output() save = new EventEmitter();
 
   songForm = this.fb.group({
+    id: [''],
     title: ['', Validators.required],
     year: ['', Validators.required],
     favorite: [false, Validators.required],
@@ -33,9 +34,18 @@ export class SongEditFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    console.log('song', this.song);
+
+  }
+
+  ngOnChanges() {
+    console.log('song', this.song);
+    this.songForm.patchValue(this.song);
   }
 
   onSubmit() {
+    console.log(this.songForm.getRawValue());
+
     this.save.emit(this.songForm.getRawValue());
   }
 
@@ -44,6 +54,9 @@ export class SongEditFormComponent implements OnInit {
   }
   addGender() {
     this.genders.push(this.fb.control(''));
+  }
+  removeGender(i) {
+    this.genders.removeAt(i);
   }
 
 }

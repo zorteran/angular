@@ -1,1 +1,1 @@
-<app-song-edit-form  (cancel)="onCancel()" (save)="onSave($event)"></app-song-edit-form>
+<app-song-edit-form *ngIf="song$|async as song" [song]="song" (cancel)="onCancel()" (save)="onSave($event)"></app-song-edit-form>

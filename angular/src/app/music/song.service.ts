@@ -25,13 +25,17 @@ export class SongService {
     );
 
   }
+  getSong(id: string): Observable<Song> {
+    return this.http.get<Song>(this.baseUrl + '/songs/' + id);
+
+  }
   addSong(data: Partial<Song>): Observable<Song> {
     return this.http.post<Song>(this.baseUrl + '/songs', data).pipe(
       tap(song => this.reload$.next('new song'))
     );
   }
   editSong(id: number, data: Partial<Song>): Observable<Song> {
-    return this.http.patch<Song>(this.baseUrl + '/songs' + id, data).pipe(
+    return this.http.patch<Song>(this.baseUrl + '/songs/' + id, data).pipe(
       tap(song => this.reload$.next('song edited'))
     );
   }

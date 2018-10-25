@@ -671,17 +671,21 @@
   "songs": [
     {
       "id": 1,
-      "title": "1904",
+      "title": "Oczy zielone",
       "year": "2012",
       "artistId": 1,
-      "webUrl": "http://www.songnotes.cc/songs/78-the-tallest-man-on-earth-1904"
+      "webUrl": "http://www.songnotes.cc/songs/78-the-tallest-man-on-earth-1904",
+      "favorite": false,
+      "genders": []
     },
     {
       "id": 2,
-      "title": "#40",
+      "title": "#407",
       "year": "1999",
       "artistId": 2,
-      "webUrl": "http://www.songnotes.cc/songs/119-dave-matthews-40"
+      "webUrl": "http://www.songnotes.cc/songs/119-dave-matthews-40",
+      "favorite": false,
+      "genders": []
     },
     {
       "id": 3,
@@ -1585,6 +1589,227 @@
       "favorite": false,
       "genders": [],
       "id": 131
+    },
+    {
+      "id": 132,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 133,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 134,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 135,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 136,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 137,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 138,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 139,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 140,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 141,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 142,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 143,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        ""
+      ]
+    },
+    {
+      "id": 144,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 145,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 146,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 147,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 148,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 149,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 150,
+      "title": "",
+      "year": "",
+      "favorite": false,
+      "genders": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 151,
+      "title": "Gender",
+      "year": "2000",
+      "favorite": true,
+      "genders": [
+        "dasd",
+        "sadas",
+        "dasda",
+        "asd",
+        "asda",
+        "sdasd",
+        "ada",
+        "asdasda"
+      ]
     }
   ]
 }
