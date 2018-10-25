@@ -9,6 +9,7 @@
     <input type="nubmer" class="form-control" id="year" formControlName="year">
   </div>
   <label for="gender">Genders</label>
+  <button (click)="addGender()">Add Gender</button>
   <div formArrayName="genders">
     <div *ngFor="let gender of genders.controls; let i=index">
       <div class="form-group">
@@ -21,4 +22,5 @@
     <label class="form-check-label" for="favorite">Favorite</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  <button (click)="onCancel()" type="button" class="btn btn-secondary">Cancel</button>
 </form>

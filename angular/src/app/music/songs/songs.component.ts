@@ -16,4 +16,9 @@ export class SongsComponent implements OnInit {
     this.songs$ = this.songService.getSongs();
   }
 
+  onCancel() {
+    console.log('cancel');
+
+  }
+
 }

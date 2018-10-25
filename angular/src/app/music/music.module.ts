@@ -30,6 +30,8 @@ import { SongViewComponent } from './song-view/song-view.component';
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
     ArtistComponent, ArtistEditComponent, PlaylistComponent,
-    PlaylistProfileComponent, SongComponent, AddSongComponent, PlaylistItemComponent, SongEditFormComponent, SongsComponent, SongAddComponent, SongEditComponent, SongViewComponent]
+    PlaylistProfileComponent, SongComponent, AddSongComponent,
+    PlaylistItemComponent, SongEditFormComponent, SongsComponent,
+    SongAddComponent, SongEditComponent, SongViewComponent]
 })
 export class MusicModule { }
