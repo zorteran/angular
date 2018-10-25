@@ -15,7 +15,12 @@
           <a class="nav-link" routerLink="music/songs" routerLinkActive="active">Songs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="onLogin()">Login</a>
+          <a class="nav-link" *ngIf='!(userService.user$|async)' (click)="onLogin()">
+            <span>Login</span>
+          </a>
+          <a class="nav-link" *ngIf='(userService.user$|async)' (click)="userService.logout()">
+            <span>{{(userService.user$|async).name}}</span>
+          </a>
         </li>
       </ul>
     </div>

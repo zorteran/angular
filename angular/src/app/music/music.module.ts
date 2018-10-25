@@ -25,8 +25,7 @@ import { SongViewComponent } from './song-view/song-view.component';
     CommonModule,
     MusicRoutingModule,
     SharedModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   declarations: [SearchComponent, ArtistProfileComponent, ImageBaseUrlPipe,
     ArtistComponent, ArtistEditComponent, PlaylistComponent,
