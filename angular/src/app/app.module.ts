@@ -7,10 +7,15 @@ import { SharedModule } from './shared/shared.module';
 import { BASE_URL, IMAGE_BASE_URL } from './app-config';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserLoginComponent
+  ],
+  entryComponents: [
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

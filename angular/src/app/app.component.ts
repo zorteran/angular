@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 @Component({
@@ -10,6 +12,18 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'MapTodo';
+
+  constructor(private dialog: MatDialog) {
+
+  }
+
+  onLogin() {
+    console.log('login');
+    const dialogRef = this.dialog.open(UserLoginComponent, {
+      height: '400px',
+      width: '600px'
+    });
+  }
 
 }
 
