@@ -12,6 +12,7 @@ import { SongComponent } from './song/song.component';
 import { SongViewComponent } from './song-view/song-view.component';
 import { SongEditComponent } from './song-edit/song-edit.component';
 import { SongAddComponent } from './song-add/song-add.component';
+import { UserGuard } from '../user.guard';
 
 const routes: Routes = [
   {
@@ -52,7 +53,8 @@ const routes: Routes = [
     children: [
       {
         path: 'add-song',
-        component: SongAddComponent
+        component: SongAddComponent,
+        canActivate: [UserGuard]
       },
       {
         path: 'edit-song/:id',
