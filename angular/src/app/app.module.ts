@@ -15,11 +15,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent,
     ErrorPageComponent
-  ],
-  entryComponents: [
-    UserLoginComponent
   ],
   imports: [
     BrowserModule,

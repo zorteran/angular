@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { UserLoginComponent } from '../user-login/user-login.component';
 
 @NgModule({
   imports: [
@@ -17,9 +18,12 @@ import { MatDialogModule, MatButtonModule, MatInputModule } from '@angular/mater
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ListComponent, MapComponent],
+  entryComponents[
+    UserLoginComponent
+  ],
+  declarations: [ListComponent, MapComponent, UserLoginComponent],
   exports: [ListComponent, MapComponent, MatDialogModule,
     MatButtonModule, FormsModule,
-    MatInputModule, ReactiveFormsModule]
+    MatInputModule, ReactiveFormsModule, UserLoginComponent]
 })
 export class SharedModule { }

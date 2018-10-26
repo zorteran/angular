@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from './user.service';
 import { take, map } from 'rxjs/operators';
+import { LoginService } from './shared/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserGuard implements CanActivate {
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private loginService: LoginService, private router: Router) {
 
   }
 
@@ -19,7 +19,7 @@ export class UserGuard implements CanActivate {
     if (next.data.roles && next.data.roles) {
 
     }
-    return this.userService.user$.pipe(
+    return this.loginService.loginDialog().pipe(
       take(1),
       map(user => {
 
