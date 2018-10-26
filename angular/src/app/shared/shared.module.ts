@@ -6,6 +6,7 @@ import { MapComponent } from './map/map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { UserLoginComponent } from '../user-login/user-login.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   imports: [
@@ -18,12 +19,12 @@ import { UserLoginComponent } from '../user-login/user-login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents[
+  entryComponents: [
     UserLoginComponent
   ],
-  declarations: [ListComponent, MapComponent, UserLoginComponent],
+  declarations: [ListComponent, MapComponent, UserLoginComponent, HighlightDirective],
   exports: [ListComponent, MapComponent, MatDialogModule,
     MatButtonModule, FormsModule,
-    MatInputModule, ReactiveFormsModule, UserLoginComponent]
+    MatInputModule, ReactiveFormsModule, UserLoginComponent, HighlightDirective]
 })
 export class SharedModule { }
