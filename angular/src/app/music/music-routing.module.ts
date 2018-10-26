@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'playlist',
-    component: SongEditFormComponent, // tymczasowo, noramlnie PlaylistComponent
+    component: PlaylistComponent,
     children: [
       {
         path: 'playlist-profile/:id',

@@ -24,6 +24,16 @@ export class UserService {
     @Inject(BASE_URL) private baseUrl: string
   ) {
 
+    const userFromStorage = localStorage.getItem('user');
+    if (userFromStorage) {
+      this._user$.next(JSON.parse(userFromStorage));
+    }
+    console.log('user from localStorage', userFromStorage);
+
+    this._user$.subscribe(user => {
+      console.log('save to localStorage', user);
+      localStorage.setItem('user', JSON.stringify(user));
+    });
 
     Observable.create().pipe(
       startWith(1),
@@ -38,10 +48,10 @@ export class UserService {
         return time >= 0 ? time : 0;
       })
     ).subscribe(time => {
-      this._idleTime$.next(time);
-      if (!time) {
+      if (!time && this._idleTime$.getValue() === 0) {
         this.logout();
       }
+      this._idleTime$.next(time);
     });
   }
 
@@ -67,6 +77,7 @@ export class UserService {
   }
 
   logout() {
+    localStorage.setItem('userl', null);
     this._user$.next(null);
   }
 
