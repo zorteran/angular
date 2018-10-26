@@ -10,11 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SessionInterceptor } from './interceptors/session.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ErrorPageComponent
   ],
   entryComponents: [
     UserLoginComponent

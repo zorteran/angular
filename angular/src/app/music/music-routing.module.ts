@@ -13,6 +13,7 @@ import { SongViewComponent } from './song-view/song-view.component';
 import { SongEditComponent } from './song-edit/song-edit.component';
 import { SongAddComponent } from './song-add/song-add.component';
 import { UserGuard } from '../user.guard';
+import { AuthorResolverServiceService } from './resolvers/author-resolver-service.service';
 
 const routes: Routes = [
   {
@@ -50,11 +51,18 @@ const routes: Routes = [
   {
     path: 'songs',
     component: SongsComponent,
+
     children: [
       {
         path: 'add-song',
         component: SongAddComponent,
-        canActivate: [UserGuard]
+        canActivate: [UserGuard],
+        data: {
+          roles: ['admin']
+        },
+        resolve: {
+          artists: AuthorResolverServiceService
+        }
       },
       {
         path: 'edit-song/:id',

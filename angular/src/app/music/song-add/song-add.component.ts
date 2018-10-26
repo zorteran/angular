@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Song } from '../models/song.model';
 import { SongService } from '../song.service';
 import { takeUntil } from 'rxjs/operators';
@@ -14,9 +14,12 @@ export class SongAddComponent implements OnInit, OnDestroy {
 
   private song: Song;
   destroy$ = new Subject();
-  constructor(private router: Router, private songService: SongService) { }
+  constructor(private router: Router, private songService: SongService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      console.log('RESOLVED DATA', data);
+    });
   }
 
   onCancel() {

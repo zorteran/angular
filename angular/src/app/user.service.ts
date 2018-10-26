@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { BASE_URL } from './app-config';
 import { switchMap, tap, startWith, merge, map } from 'rxjs/operators';
 
-const sessionDuration = 15;
+const sessionDuration = 60;
 
 @Injectable({
   providedIn: 'root'

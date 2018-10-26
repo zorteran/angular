@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Sages Fan",
-      "password": "admin123"
+      "password": "admin123",
+      "role": "admin"
     }
   ],
   "playlists": [
@@ -1810,6 +1811,13 @@
         "ada",
         "asdasda"
       ]
+    },
+    {
+      "id": 152,
+      "title": "ds",
+      "year": "sdsd",
+      "favorite": false,
+      "genders": []
     }
   ]
 }
