@@ -11,11 +11,13 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { SessionInterceptor } from './interceptors/session.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { LoginDirective } from './directives/login.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    LoginDirective
   ],
   imports: [
     BrowserModule,
